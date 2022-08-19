@@ -47,17 +47,14 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     images
-      .subscribe(onNext: { [weak imagePreview] photos in
+      .subscribe(onNext: { [weak imagePreview, weak self] photos in
         guard let preview = imagePreview else { return }
         
         preview.image = photos.collage(size: preview.frame.size)
+        self?.updateUI(photos: photos)
       })
       .disposed(by: bag)
-    
-    images.subscribe(onNext: { [weak self] photos in
-      self?.updateUI(photos: photos)
-    })
-      .disposed(by: bag)
+
   }
   
   @IBAction func actionClear() {
@@ -69,9 +66,20 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func actionAdd() {
-    let newImages = images.value
-      + [UIImage(named: "IMG_1907.jpg")!]
-    images.accept(newImages)
+    let photosViewController =
+    storyboard?.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
+    photosViewController.selectedPhotos
+      .subscribe(
+        onNext: { [weak self] newImage in
+          guard let images = self?.images else { return }
+          images.accept(images.value + [newImage])
+      },
+        onDisposed: {
+        print("Completed photo selection")
+        }
+      )
+      .disposed(by: bag)
+    navigationController?.pushViewController(photosViewController, animated: true)
   }
   
   private func updateUI(photos: [UIImage]) {
