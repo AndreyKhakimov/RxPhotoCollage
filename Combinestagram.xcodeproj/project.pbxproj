@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C62B16FBCC599B42FE89D9F /* Pods_Combinestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7559D67FA2408E3F2F99EAA6 /* Pods_Combinestagram.framework */; };
+		4299778D28B6690800E983ED /* UIViewController+RxAllert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4299778C28B6690700E983ED /* UIViewController+RxAllert.swift */; };
 		9CDD7B041DE5AABE0058B2D5 /* UIImage+Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD7B031DE5AABE0058B2D5 /* UIImage+Collage.swift */; };
 		9CDD7B061DE5BC660058B2D5 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD7B051DE5BC660058B2D5 /* PhotosViewController.swift */; };
 		9CDD7B081DE6D7ED0058B2D5 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD7B071DE6D7ED0058B2D5 /* PhotoCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4299778C28B6690700E983ED /* UIViewController+RxAllert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+RxAllert.swift"; sourceTree = "<group>"; };
 		71D61D9BA9576D53DBB7458F /* Pods-Combinestagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Combinestagram.release.xcconfig"; path = "Target Support Files/Pods-Combinestagram/Pods-Combinestagram.release.xcconfig"; sourceTree = "<group>"; };
 		7559D67FA2408E3F2F99EAA6 /* Pods_Combinestagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Combinestagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDD7B031DE5AABE0058B2D5 /* UIImage+Collage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "UIImage+Collage.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -84,6 +86,7 @@
 				9CDD7B031DE5AABE0058B2D5 /* UIImage+Collage.swift */,
 				9CE7E5DC1DE5A40900C8BA5A /* AppDelegate.swift */,
 				9CDD7B0B1DE6E3D30058B2D5 /* PhotoWriter.swift */,
+				4299778C28B6690700E983ED /* UIViewController+RxAllert.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -155,7 +158,7 @@
 				TargetAttributes = {
 					9CE7E5D81DE5A40900C8BA5A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 9MF8G8D9Y5;
+						DevelopmentTeam = 3PVRW477K7;
 						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
@@ -246,6 +249,7 @@
 				9CDD7B041DE5AABE0058B2D5 /* UIImage+Collage.swift in Sources */,
 				9CDD7B081DE6D7ED0058B2D5 /* PhotoCell.swift in Sources */,
 				9CDD7B061DE5BC660058B2D5 /* PhotosViewController.swift in Sources */,
+				4299778D28B6690800E983ED /* UIViewController+RxAllert.swift in Sources */,
 				9CDD7B0C1DE6E3D30058B2D5 /* PhotoWriter.swift in Sources */,
 				9CE7E5DF1DE5A40A00C8BA5A /* MainViewController.swift in Sources */,
 				9CE7E5DD1DE5A40A00C8BA5A /* AppDelegate.swift in Sources */,
@@ -390,10 +394,10 @@
 			baseConfigurationReference = D3D1A11BAFC7C7EB52D2FDE1 /* Pods-Combinestagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3PVRW477K7;
 				INFOPLIST_FILE = Combinestagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Combinestagram;
+				PRODUCT_BUNDLE_IDENTIFIER = AAjr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -405,10 +409,10 @@
 			baseConfigurationReference = 71D61D9BA9576D53DBB7458F /* Pods-Combinestagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3PVRW477K7;
 				INFOPLIST_FILE = Combinestagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.Combinestagram;
+				PRODUCT_BUNDLE_IDENTIFIER = AAjr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
