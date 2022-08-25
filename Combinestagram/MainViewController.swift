@@ -80,7 +80,10 @@ class MainViewController: UIViewController {
   @IBAction func actionAdd() {
     let photosViewController =
     storyboard?.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
-    photosViewController.selectedPhotos
+    let newPhotos = photosViewController.selectedPhotos
+      .share()
+    
+    newPhotos
       .subscribe(
         onNext: { [weak self] newImage in
           guard let images = self?.images else { return }
@@ -92,6 +95,13 @@ class MainViewController: UIViewController {
       )
       .disposed(by: bag)
     navigationController?.pushViewController(photosViewController, animated: true)
+    
+    newPhotos
+      .ignoreElements()
+      .subscribe(onCompleted: { [weak self] in
+        self?.updateNavigationIcon()
+      })
+      .disposed(by: bag)
   }
   
   private func updateUI(photos: [UIImage]) {
@@ -100,9 +110,16 @@ class MainViewController: UIViewController {
     itemAdd.isEnabled = photos.count < 6
     title = photos.count > 0 ? "\(photos.count) photos" : "Collage"
   }
+  
+  private func updateNavigationIcon() {
+    let icon = imagePreview.image?
+      .scaled(CGSize(width: 22, height: 22))
+      .withRenderingMode(.alwaysOriginal)
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon, style: .done, target: nil, action: nil)
+  }
 
   func showMessage(_ title: String, description: String? = nil) {
-    presentAllert(with: title, and: description)
+    presentAlert(with: title, and: description)
       .subscribe()
       .disposed(by: bag)
   }

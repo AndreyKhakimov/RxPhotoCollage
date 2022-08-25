@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 extension UIViewController {
-  func presentAllert(with title: String, and message: String?) -> Completable {
+  func presentAlert(with title: String, and message: String?) -> Completable {
     return Completable.create { [weak self] completable in
       let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { _ in
