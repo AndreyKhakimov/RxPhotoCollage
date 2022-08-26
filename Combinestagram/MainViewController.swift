@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     images
+      .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak imagePreview, weak self] photos in
         guard let preview = imagePreview else { return }
         
